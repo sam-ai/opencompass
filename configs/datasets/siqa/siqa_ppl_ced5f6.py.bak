@@ -15,17 +15,17 @@ siqa_infer_cfg = dict(
         template={
             1:
             dict(round=[
-                dict(role='HUMAN', prompt="### System:\nBelow is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.\n\n\n\n### Instruction:\n{question}\n\n### Input:\n{context}\n\n### Response:\n"),
+                dict(role='HUMAN', prompt="{context}\nQuestion: {question}\nAnswer:"),
                 dict(role='BOT', prompt="{answerA}")
             ]),
             2:
             dict(round=[
-                dict(role='HUMAN', prompt="### System:\nBelow is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.\n\n\n\n### Instruction:\n{question}\n\n### Input:\n{context}\n\n### Response:\n"),
+                dict(role='HUMAN', prompt="{context}\nQuestion: {question}\nAnswer:"),
                 dict(role='BOT', prompt="{answerB}")
             ]),
             3:
             dict(round=[
-                dict(role='HUMAN', prompt="### System:\nBelow is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.\n\n\n\n### Instruction:\n{question}\n\n### Input:\n{context}\n\n### Response:\n"),
+                dict(role='HUMAN', prompt="{context}\nQuestion: {question}\nAnswer:"),
                 dict(role='BOT', prompt="{answerC}")
             ]),
         }),
@@ -38,7 +38,7 @@ siqa_datasets = [
     dict(
         abbr="siqa",
         type=HFDataset,
-        path='sam2ai/hindi_siqa_mini',
+        path='social_i_qa',
         reader_cfg=siqa_reader_cfg,
         infer_cfg=siqa_infer_cfg,
         eval_cfg=siqa_eval_cfg)

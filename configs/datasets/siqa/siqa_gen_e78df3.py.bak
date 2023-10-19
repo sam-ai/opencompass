@@ -2,7 +2,7 @@ from opencompass.openicl.icl_prompt_template import PromptTemplate
 from opencompass.openicl.icl_retriever import ZeroRetriever
 from opencompass.openicl.icl_inferencer import GenInferencer
 from opencompass.openicl.icl_evaluator import EDAccEvaluator
-from opencompass.datasets import siqaDataset_V2, HFDataset
+from opencompass.datasets import siqaDataset_V2
 
 siqa_reader_cfg = dict(
     input_columns=["context", "question", "answerA", "answerB", "answerC"],
@@ -17,8 +17,7 @@ siqa_infer_cfg = dict(
                 dict(
                     role="HUMAN",
                     prompt=
-                    # "{context}\nQuestion: {question}\nA. {answerA}\nB. {answerB}\nC. {answerC}\nAnswer:"
-                    "### System:\nBelow is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.\n\n\n\n### Instruction:\n{question}\nA. {answerA}\nB. {answerB}\nC. {answerC}\n\n### Input:\n{context}\n\n### Response:\n"
+                    "{context}\nQuestion: {question}\nA. {answerA}\nB. {answerB}\nC. {answerC}\nAnswer:"
                 )
             ], ),
     ),
@@ -35,7 +34,7 @@ siqa_datasets = [
     dict(
         abbr="siqa",
         type=siqaDataset_V2,
-        path="sam2ai/hindi_siqa_mini",
+        path="social_i_qa",
         reader_cfg=siqa_reader_cfg,
         infer_cfg=siqa_infer_cfg,
         eval_cfg=siqa_eval_cfg)
