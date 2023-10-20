@@ -1,6 +1,6 @@
 from opencompass.models import HuggingFaceCausalLM
 
-mistral7b = [
+models = [
     # LLaMA 7B
     dict(
         type=HuggingFaceCausalLM,
