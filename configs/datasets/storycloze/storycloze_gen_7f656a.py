@@ -18,7 +18,8 @@ storycloze_infer_cfg = dict(
                 role="HUMAN",
                 prompt=
                 # "{context}\nQuestion: Which ending makes the most sense?\nA. {sentence_quiz1}\nB. {sentence_quiz2}\nYou may choose between 'A' and 'B'.\nAnswer:",
-                "### System:\nBelow is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.\n\n\n\n### Instruction:\nप्रश्न: कौन सा अंत सबसे अधिक अर्थपूर्ण है?\nA. {sentence_quiz1}\nB. {sentence_quiz2}\nआप इनमें से चुन सकते हैं 'A' और 'B'.\n\n### Input:\n{context}\n\n### Response:\n"
+                # "### System:\nBelow is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.\n\n\n\n### Instruction:\nप्रश्न: कौन सा अंत सबसे अधिक अर्थपूर्ण है?\nA. {sentence_quiz1}\nB. {sentence_quiz2}\nआप इनमें से चुन सकते हैं 'A' और 'B'.\n\n### Input:\n{context}\n\n### Response:\n",
+                "### System:\nBelow is an instruction that describes a task. Write a response that appropriately completes the request.\n\n\n\n### Instruction:\n{context}\nप्रश्न: कौन सा अंत सबसे अधिक अर्थपूर्ण है?\nA. {sentence_quiz1}\nB. {sentence_quiz2}\nआप इनमें से चुन सकते हैं 'A' और 'B'.\n\n### Response:\n"
             ),
         ]),
     ),

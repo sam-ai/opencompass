@@ -13,7 +13,7 @@ truthfulqa_reader_cfg = dict(
 truthfulqa_infer_cfg = dict(
     prompt_template=dict(
         type=PromptTemplate,
-        template=dict(round=[dict(role="HUMAN", prompt="{question}")])),
+        template=dict(round=[dict(role="HUMAN", prompt="### System:\nBelow is an instruction that describes a task. Write a response that appropriately completes the request.\n\n\n\n### Instruction:\n{question}\n\n### Response:\n")])),
     retriever=dict(type=ZeroRetriever),
     inferencer=dict(type=GenInferencer))
 
@@ -36,8 +36,8 @@ truthfulqa_datasets = [
     dict(
         abbr='truthful_qa',
         type=TruthfulQADataset,
-        path='truthful_qa',
-        name='generation',
+        path='sam2ai/hindi_truthfulqa_gen_mini',
+        name='default',
         reader_cfg=truthfulqa_reader_cfg,
         infer_cfg=truthfulqa_infer_cfg,
         eval_cfg=truthfulqa_eval_cfg)
